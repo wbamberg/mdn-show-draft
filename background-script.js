@@ -20,8 +20,6 @@ chrome.runtime.onMessage.addListener(function(message) {
       current: xhr.responseXML.body.innerHTML,
       cached: message.draft
     };
-    
-    console.log(compareData.current)
 
     chrome.tabs.create({
       "url": compareUrl
