@@ -7,18 +7,17 @@
   </head>
 
 <body>
-  <div id="comparison">
-    <div class="compare-box textbox" id="current">Current
-      <pre class="contents"></pre>
-    </div>
-    <div class="compare-box textbox" id="cached">Cached
-      <pre class="contents"></pre>
-    </div>
-  </div>
 
-  <div class="textbox" id="output">Comparison
-    <div class="contents"></div>
-  </div>
+    <h2 id="last-saved-heading">Last Saved Revision</h2>
+    <pre class="contents" id="current"></pre>
+    <hr/>
+
+    <h2 id="cached-heading">Cached</h2>
+    <pre class="contents" id="cached"></pre>
+    <hr/>
+
+    <h2 id="compare-heading">Comparison</h2>
+    <pre class="contents" id="output"></pre>
   
   <script src="diff-match-patch.js"></script>
   <script src="compare.js"></script>

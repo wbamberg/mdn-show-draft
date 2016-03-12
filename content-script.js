@@ -19,4 +19,7 @@ if (pageHasCachedDraft(notice)) {
   showDraftLink.addEventListener("click", showDraft);
   showDraftLink.setAttribute("href", "");
   notice.firstChild.appendChild(showDraftLink);
+  
+  var period = document.createTextNode(".");
+  notice.firstChild.appendChild(period);
 }

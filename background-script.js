@@ -1,20 +1,14 @@
 var compareUrl = chrome.extension.getURL("compare/compare.html");
+var compareData;
 
-function compare(currentContent, cachedContent) {
-
-  chrome.tabs.create({
-    "url": compareUrl
-  });
-  
-  function sendToCompare(tabId, changeInfo, tab) {
-    if (tab.url == compareUrl) {
-      chrome.runtime.sendMessage({current: currentContent, cached: cachedContent});
-      chrome.tabs.update(tabId, {active: true});
-    }
+function sendToCompare(tabId, changeInfo, tab) {
+  if (tab.url == compareUrl && compareData) {
+    chrome.runtime.sendMessage(compareData);
+    chrome.tabs.update(tabId, {active: true});
   }
-
-  chrome.tabs.onUpdated.addListener(sendToCompare);
 }
+
+chrome.tabs.onUpdated.addListener(sendToCompare);
 
 chrome.runtime.onMessage.addListener(function(message) {
   if (!message.url) {
@@ -22,16 +16,23 @@ chrome.runtime.onMessage.addListener(function(message) {
   }
 
   function onLoaded(e) {    
-    var currentContent = xhr.responseXML.body.innerHTML;
-    var cachedContent = message.draft;
-    compare(currentContent, cachedContent);
+    compareData = {
+      current: xhr.responseXML.body.innerHTML,
+      cached: message.draft
+    };
+    
+    console.log(compareData.current)
+
+    chrome.tabs.create({
+      "url": compareUrl
+    });
   }
 
   function onError(e) {
     console.log(e);
   }
 
-  var pageUrl = message.url.slice(0, -5) + "?raw";
+  var pageUrl = message.url.slice(0, -5) + "?raw" + "&" + (new Date()).getTime();
 
   var xhr = new XMLHttpRequest();
   xhr.addEventListener("load", onLoaded, false);
