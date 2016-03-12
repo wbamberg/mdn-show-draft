@@ -26,7 +26,7 @@
     }
   ],
   
-  "permissions":["<all_urls>", "tabs"],
+  "permissions":["tabs"],
   
   "default_locale": "en"
 }
