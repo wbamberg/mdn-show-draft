@@ -1,0 +1,21 @@
+{
+  "extensionName": {
+    "message": "MDN show cached drafts",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Shows you the content of cached drafts on MDN pages",
+    "description": "Description of the extension."
+  },
+
+  "noticeStart": {
+    "message": "You have a draft from:",
+    "description": "Start of the MDN message telling you that you have a draft"
+  },
+
+  "linkName": {
+    "message": " Show the draft content",
+    "description": "Text content for the link to show the content of your draft"
+  }
+}
