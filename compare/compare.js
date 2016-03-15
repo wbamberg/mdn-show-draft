@@ -10,7 +10,6 @@ function compare(request, sender, sendResponse) {
 
   var dmp = new diff_match_patch();
   var d = dmp.diff_main(current, cached);
-  var ms_end = (new Date()).getTime();
   dmp.diff_cleanupSemantic(d);
   document.querySelector("#output").innerHTML = dmp.diff_prettyHtml(d);  
 }
