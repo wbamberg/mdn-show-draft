@@ -1,6 +1,5 @@
-
-h2 {
-  font: 1.5em "Open Sans", sans-serif;
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
 hr {
@@ -11,4 +10,8 @@ hr {
 
 pre {
   white-space: pre-wrap;
+}
+
+section.hidden {
+  display: none;
 }

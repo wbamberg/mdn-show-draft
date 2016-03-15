@@ -19,18 +19,18 @@
     "description": "Text content for the link to show the content of your draft."
   },
 
-  "lastSavedHeading": {
-    "message": "Last Saved Revision",
-    "description": "Heading for the last saved revision in the comparison page."
+  "lastSavedRevision": {
+    "message": "Last saved revision",
+    "description": "Heading for the last saved revision in the comparison page, and label for the corresponding radio button."
   },
 
-  "cachedHeading": {
-    "message": "Cached Revision",
-    "description": "Heading for the cached revision in the comparison page."
+  "cachedDraft": {
+    "message": "Cached draft",
+    "description": "Heading for the cached revision in the comparison page, and label for the corresponding radio button."
   },
 
-  "compareHeading": {
+  "comparison": {
     "message": "Comparison",
-    "description": "Heading for the cmoparison of the 2 revisions in the comparison page."
+    "description": "Heading for the comparison of the 2 revisions in the comparison page, and label for the corresponding radio button."
   }
 }

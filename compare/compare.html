@@ -8,17 +8,32 @@
 
 <body>
 
-    <h2 id="last-saved-heading">Last Saved Revision</h2>
-    <pre class="contents" id="current"></pre>
+    <input type="radio" name="output-choice" id="last-saved-revision-button"/>
+    <label for="last-saved-revision-button">Last saved revision</label>
+
+    <input type="radio" name="output-choice" id="cached-draft-button"/>
+    <label for="cached-draft-button">Cached draft</label>
+
+    <input type="radio" name="output-choice" id="comparison-button" checked="true"/>
+    <label for="comparison-button">Comparison</label>
+
     <hr/>
 
-    <h2 id="cached-heading">Cached</h2>
-    <pre class="contents" id="cached"></pre>
-    <hr/>
+    <section id="last-saved-revision" class="hidden">
+      <h2>Last saved revision</h2>
+      <pre></pre>
+    </section>
 
-    <h2 id="compare-heading">Comparison</h2>
-    <pre class="contents" id="output"></pre>
-  
+    <section id="cached-draft" class="hidden">
+      <h2>Cached draft</h2>
+      <pre></pre>
+    </section>
+
+    <section id="comparison">
+      <h2>Comparison</h2>
+      <pre></pre>
+    </section>
+
   <script src="diff-match-patch.js"></script>
   <script src="compare.js"></script>
 
