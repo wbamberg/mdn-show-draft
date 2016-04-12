@@ -9,20 +9,19 @@ function showDraft(e) {
   e.preventDefault();
 }
 
-function pageHasCachedDraftNotice(notice) {
+function pageHasCachedDraft(notice) {
   var draftNoticeStart = chrome.i18n.getMessage("noticeStart");
   return (notice && (notice.textContent.indexOf(draftNoticeStart) == 0));
 }
 
-var notice = document.querySelector(".notice");
+var notice = document.querySelector(".draft-status");
 
-if (pageHasCachedDraftNotice(notice)) {  
+if (pageHasCachedDraft(notice)) {  
   var showDraftLink = document.createElement("a");
   showDraftLink.textContent = chrome.i18n.getMessage("linkName");
   showDraftLink.addEventListener("click", showDraft);
   showDraftLink.setAttribute("href", "");
-  notice.firstChild.appendChild(showDraftLink);
-  
+  notice.appendChild(showDraftLink);
   var period = document.createTextNode(".");
-  notice.firstChild.appendChild(period);
+  notice.appendChild(period);
 }
